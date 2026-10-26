@@ -272,19 +272,19 @@ These have deliberately **not** been decided in this PRD.
 
 ### 8.3 Open Questions — Product behavior
 
-These details are not specified by the requirements and need a decision before or during implementation.
+These details are not specified by the requirements and need a decision before or during implementation. Answers recorded on 2026-10-26 are explained in [`ARCHITECTURE.md`](ARCHITECTURE.md) Sections 4 and 7.
 
-| # | Question |
-|---|---|
-| Q5 | Must every task belong to a project, or can a task exist without a project? |
-| Q6 | Can a task belong to more than one project, or only one? |
-| Q7 | What happens to a project's tasks when the project is deleted? Should the user be asked to confirm? |
-| Q8 | Should deleting a task require confirmation? |
-| Q9 | Which time zone defines "today" — the user's device time zone or another source? |
-| Q10 | How should progress percentages be rounded and displayed (for example, 1 of 3 = 33% or 33.3%)? |
-| Q11 | Are there maximum lengths for project names and task titles? |
-| Q12 | Should project names be unique? |
-| Q13 | Can a due date be set in the past when creating or editing a task? |
-| Q14 | Do tasks or projects have any fields beyond name/title, due date, and completion status (for example, a description)? |
-| Q15 | In what order should tasks appear in each view (for example, by due date or by creation order)? |
-| Q16 | Which screen sizes and browsers must be tested to confirm "responsive and usable" (F9)? |
+| # | Question | Answer |
+|---|---|---|
+| Q5 | Must every task belong to a project, or can a task exist without a project? | Every task must belong to a project. |
+| Q6 | Can a task belong to more than one project, or only one? | Exactly one project. |
+| Q7 | What happens to a project's tasks when the project is deleted? Should the user be asked to confirm? | Its tasks are deleted too, after a confirmation page that shows how many tasks will be deleted. |
+| Q8 | Should deleting a task require confirmation? | Yes, through a confirmation page. |
+| Q9 | Which time zone defines "today" — the user's device time zone or another source? | The server's local date. To be revisited if the app is hosted (ARCHITECTURE.md D4). |
+| Q10 | How should progress percentages be rounded and displayed (for example, 1 of 3 = 33% or 33.3%)? | Whole percent, rounded down (1 of 3 = 33%, 199 of 200 = 99%). |
+| Q11 | Are there maximum lengths for project names and task titles? | Project name: 100 characters. Task title: 200 characters. |
+| Q12 | Should project names be unique? | No, uniqueness is not enforced. |
+| Q13 | Can a due date be set in the past when creating or editing a task? | Yes. |
+| Q14 | Do tasks or projects have any fields beyond name/title, due date, and completion status (for example, a description)? | Open |
+| Q15 | In what order should tasks appear in each view (for example, by due date or by creation order)? | Open |
+| Q16 | Which screen sizes and browsers must be tested to confirm "responsive and usable" (F9)? | Open |
